@@ -29,13 +29,11 @@ public class EditSpeciesServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String species = request.getParameter("species");
 		String breed = request.getParameter("breed");
 		int age = Integer.parseInt(request.getParameter("avgAge"));
 		int weight = Integer.parseInt(request.getParameter("weight"));
-		SpeciesInformation si = new SpeciesInformation(species, breed, age, weight);
+		SpeciesInformation si = new SpeciesInformation(breed, age, weight);
 		SpeciesInformationHelper sih = new SpeciesInformationHelper();
-		si.setSpecies(species);
 		si.setBreed(breed);
 		si.setAvgAge(age);
 		si.setHealthyWeight(weight);

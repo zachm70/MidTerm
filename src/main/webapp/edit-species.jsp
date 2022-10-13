@@ -10,9 +10,6 @@
 <body>
 
 <form action = "editSpeciesServlet" method="post">
-Species: <input type ="text" name = "species" value= "${itemToEdit.species}">
-<br>
-<br>
 Breed: <input type = "text" name = "breed" value= "${itemToEdit.breed}">
 <br><br>
 Average Age: <input type = "text" name = "avgAge" value= "${itemToEdit.avgAge}">

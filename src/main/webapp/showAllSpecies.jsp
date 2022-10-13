@@ -32,7 +32,6 @@ tr:nth-child(even) {
 <tr>
 <th>Select</th>
 <th>ID</th>
-<th>Species</th>
 <th>Breed</th>
 <th>Avg Lifespan</th>
 <th>Healthy Weight</th>
@@ -41,7 +40,6 @@ tr:nth-child(even) {
 <tr>
  <td><input type="radio" name="pkid" value="${currentitem.PKID}"></td>
  <td>${currentitem.PKID} &nbsp;  </td>
- <td>${currentitem.species}</td>
  <td>${currentitem.breed}</td>
  <td>${currentitem.avgAge}</td>
  <td>${currentitem.healthyWeight}</td>
