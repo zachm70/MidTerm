@@ -18,8 +18,6 @@ public class SpeciesInformation {
 	@GeneratedValue
 	@Column(name="ID")
 	private int PKID;
-	@Column(name="species")
-	private String species;
 	@Column(name="breed")
 	private String breed;
 	@Column(name="avgAge")
@@ -33,17 +31,10 @@ public class SpeciesInformation {
 	}
 	
 	//constructor with args
-	public SpeciesInformation(String species, String breed, int avgAge, int healthyWeight) {
-		setSpecies(species);
+	public SpeciesInformation(String breed, int avgAge, int healthyWeight) {
 		setBreed(breed);
 		setAvgAge(avgAge);
 		setHealthyWeight(healthyWeight);
-	}
-	public String getSpecies() {
-		return species;
-	}
-	public void setSpecies(String species) {
-		this.species = species;
 	}
 	public String getBreed() {
 		return breed;

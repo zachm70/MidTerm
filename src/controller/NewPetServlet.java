@@ -8,16 +8,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class viewAllSpeciesServlet
+ * Servlet implementation class NewPetServlet
  */
-@WebServlet("/viewAllSpeciesServlet")
-public class viewAllSpeciesServlet extends HttpServlet {
+@WebServlet("/newPetServlet")
+public class NewPetServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public viewAllSpeciesServlet() {
+    public NewPetServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -26,14 +26,16 @@ public class viewAllSpeciesServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		SpeciesInformationHelper sih = new SpeciesInformationHelper();
-		request.setAttribute("allItems", sih.showAllSpecies());
-		String path = "/showAllSpecies.jsp";
-		if(sih.showAllSpecies().isEmpty()){
-			path = "/index.html";
+		
+		request.setAttribute("allBreeds", sih.showAllSpecies());
+		
+		if(sih.showAllSpecies().isEmpty()) {
+			request.setAttribute("allBreeds", "");
 		}
-		getServletContext().getRequestDispatcher(path).forward(request, response); 
+		
+		getServletContext().getRequestDispatcher("/newPet.jsp").forward(request,response);
+		
 	}
 
 	/**

@@ -19,13 +19,14 @@ public class Dogs {
 	@Column(name="name")
 	private String name;
 	@ManyToOne
-	private Breed breed;
+	private SpeciesInformation breed;
 	@Column(name="birthday")
 	private LocalDate birthday;
 	
 	
-	public Dogs(String name, LocalDate birthday) {
+	public Dogs(String name, SpeciesInformation breed, LocalDate birthday) {
 		super();
+		this.breed = breed;
 		this.name = name;
 		this.birthday = birthday;
 	}
@@ -52,11 +53,23 @@ public class Dogs {
 	public void setBirthday(LocalDate birthday) {
 		this.birthday = birthday;
 	}
+	
+	
+
+	public SpeciesInformation getBreed() {
+		return breed;
+	}
+
+	public void setBreed(SpeciesInformation breed) {
+		this.breed = breed;
+	}
 
 	@Override
 	public String toString() {
-		return "Dogs [id=" + id + ", name=" + name + ", birthday=" + birthday + "]";
+		return "Dogs [id=" + id + ", name=" + name + ", breed=" + breed + ", birthday=" + birthday + "]";
 	}
+
+	
 	
 	
 	

@@ -9,9 +9,9 @@ import javax.persistence.TypedQuery;
 import model.Dogs;
 
 public class DogHelper {
-	static EntityManagerFactory emfactory = Persistence.createEntityManagerFactory("Dogs");
+	static EntityManagerFactory emfactory = Persistence.createEntityManagerFactory("MidTerm");
 	
-	public void insertNewListDetails(Dogs d) {
+	public void insertNewDog(Dogs d) {
 		EntityManager em = emfactory.createEntityManager();
 		
 		em.getTransaction().begin();
@@ -26,11 +26,11 @@ public class DogHelper {
 		return allDogs;
 	}
 	
-	public void deleteList(Dogs toDelete) {
+	public void deleteDog(Dogs toDelete) {
 		EntityManager em = emfactory.createEntityManager();
 		em.getTransaction().begin();
 		
-		TypedQuery<Dogs> typedQuery = em.createQuery("select d from Dogs d where d.id :=selectedId", Dogs.class);
+		TypedQuery<Dogs> typedQuery = em.createQuery("select d from Dogs d where d.id =:selectedId", Dogs.class);
 		
 		typedQuery.setParameter("selectedId", toDelete.getId());
 		typedQuery.setMaxResults(1);
@@ -53,7 +53,7 @@ public class DogHelper {
 		return found;
 	}
 	
-	public void updateList(Dogs toEdit) {
+	public void updateDog(Dogs toEdit) {
 		EntityManager em = emfactory.createEntityManager();
 		em.getTransaction().begin();
 		em.merge(toEdit);

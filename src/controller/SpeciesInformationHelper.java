@@ -16,7 +16,7 @@ import model.SpeciesInformation;
  */
 public class SpeciesInformationHelper {
 
-	static EntityManagerFactory emfactory = Persistence.createEntityManagerFactory("MidTerm2");
+	static EntityManagerFactory emfactory = Persistence.createEntityManagerFactory("MidTerm");
 	
 	public SpeciesInformationHelper() {
 		// TODO Auto-generated constructor stub
