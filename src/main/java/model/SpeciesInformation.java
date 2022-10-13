@@ -18,8 +18,6 @@ public class SpeciesInformation {
 	@GeneratedValue
 	@Column(name="ID")
 	private int PKID;
-	@Column(name="species")
-	private String species;
 	@Column(name="breed")
 	private String breed;
 	@Column(name="avgAge")

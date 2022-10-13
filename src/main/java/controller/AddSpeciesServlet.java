@@ -36,11 +36,10 @@ public class AddSpeciesServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String species = request.getParameter("species");
 		String breed = request.getParameter("breed");
 		int age = Integer.parseInt(request.getParameter("avgAge"));
 		int weight = Integer.parseInt(request.getParameter("weight"));
-		SpeciesInformation si = new SpeciesInformation(species, breed, age, weight);
+		SpeciesInformation si = new SpeciesInformation(breed, age, weight);
 		SpeciesInformationHelper sih = new SpeciesInformationHelper();
 		sih.insertItem(si);
 		getServletContext().getRequestDispatcher("/index.html").forward(request, response);
