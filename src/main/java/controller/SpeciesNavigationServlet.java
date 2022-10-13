@@ -47,7 +47,7 @@ public class SpeciesNavigationServlet extends HttpServlet {
 
 		} else if (act.equals("edit")) {
 			try {
-				Integer tempId = Integer.parseInt(request.getParameter("id"));
+				Integer tempId = Integer.parseInt(request.getParameter("pkid"));
 				SpeciesInformation speciesToEdit = sih.searchForSpeciesById(tempId);
 				request.setAttribute("speciesToEdit", speciesToEdit);
 				path = "/edit-species.jsp";
