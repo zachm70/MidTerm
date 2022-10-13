@@ -1,15 +1,30 @@
 package model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 /**
  * @author kenne-krcutkomp
  * CIS175 - Fall 2022
  */
-
+@Entity
+@Table(name="speciesInformation")
 public class SpeciesInformation {
 
+	@Id
+	@GeneratedValue
+	@Column(name="ID")
+	private int PKID;
+	@Column(name="species")
 	private String species;
+	@Column(name="breed")
 	private String breed;
+	@Column(name="avgAge")
 	private int avgAge;
+	@Column(name="healthyWeight")
 	private int healthyWeight;
 	
 	//no arg default constructor
@@ -48,6 +63,12 @@ public class SpeciesInformation {
 	public void setHealthyWeight(int healthyWeight) {
 		this.healthyWeight = healthyWeight;
 	}
+
+	public int getPKID() {
+		return PKID;
+	}
+
+	
 	
 
 }

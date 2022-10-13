@@ -6,6 +6,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -17,8 +18,8 @@ public class Dogs {
 	private int id;
 	@Column(name="name")
 	private String name;
-	//@ManyToOne
-	//private Breed breed;
+	@ManyToOne
+	private Breed breed;
 	@Column(name="birthday")
 	private LocalDate birthday;
 	
