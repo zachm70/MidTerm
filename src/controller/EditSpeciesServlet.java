@@ -29,24 +29,24 @@ public class EditSpeciesServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String breed = request.getParameter("breed");
-		int age = Integer.parseInt(request.getParameter("avgAge"));
-		int weight = Integer.parseInt(request.getParameter("weight"));
-		SpeciesInformation si = new SpeciesInformation(breed, age, weight);
-		SpeciesInformationHelper sih = new SpeciesInformationHelper();
-		si.setBreed(breed);
-		si.setAvgAge(age);
-		si.setHealthyWeight(weight);
-		sih.updateSpecies(si);
-		getServletContext().getRequestDispatcher("/viewAllSpeciesServlet").forward(request, response);
+		
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		int tempId = Integer.parseInt(request.getParameter("pkid"));
+		String breed = request.getParameter("breed");
+		int age = Integer.parseInt(request.getParameter("avgAge"));
+		int weight = Integer.parseInt(request.getParameter("weight"));
+		SpeciesInformationHelper sih = new SpeciesInformationHelper();
+		SpeciesInformation si = sih.searchForSpeciesById(tempId);
+		si.setBreed(breed);
+		si.setAvgAge(age);
+		si.setHealthyWeight(weight);
+		sih.updateSpecies(si);
+		getServletContext().getRequestDispatcher("/viewAllSpeciesServlet").forward(request, response);
 	}
 
 }

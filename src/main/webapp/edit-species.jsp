@@ -10,13 +10,13 @@
 <body>
 
 <form action = "editSpeciesServlet" method="post">
-Breed: <input type = "text" name = "breed" value= "${itemToEdit.breed}">
+Breed: <input type = "text" name = "breed" value= "${speciesToEdit.breed}">
 <br><br>
-Average Age: <input type = "text" name = "avgAge" value= "${itemToEdit.avgAge}">
+Average Age: <input type = "text" name = "avgAge" value= "${speciesToEdit.avgAge}">
 <br><br>
-Healthy Weight: <input type = "text" name = "weight" value= "${itemToEdit.healthyWeight}">
+Healthy Weight: <input type = "text" name = "weight" value= "${speciesToEdit.healthyWeight}">
 <br><br>
-<input type = "hidden" name = "pkid" value="${itemToEdit.PKID}">
+<input type = "hidden" name = "pkid" value="${speciesToEdit.PKID}">
 <input type = "submit" value="Save">
 </form>
 
